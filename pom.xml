@@ -8,14 +8,18 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>memoryhack.snowballs.memory-backend</groupId>
-	<artifactId>memory-backend</artifactId>
+	<groupId>virushack.changing.guideline.backend</groupId>
+	<artifactId>guideline-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>memory-backend</name>
-	<description>memory-backend</description>
+	<name>guideline-backend</name>
+	<description>guideline-backend</description>
 
 	<properties>
-		<java.version>11</java.version>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>

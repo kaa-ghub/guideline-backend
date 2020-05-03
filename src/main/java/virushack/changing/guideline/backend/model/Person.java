@@ -1,4 +1,4 @@
-package memoryhack.snowballs.memory.backend.model;
+package virushack.changing.guideline.backend.model;
 
 import lombok.Data;
 

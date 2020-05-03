@@ -1,13 +1,13 @@
-package memoryhack.snowballs.memory.backend;
+package virushack.changing.guideline.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MemoryBackendApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MemoryBackendApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
