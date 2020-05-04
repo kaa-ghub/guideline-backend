@@ -7,5 +7,5 @@ import virushack.changing.guideline.backend.model.Guideline;
 
 @CrossOrigin
 @RepositoryRestResource
-public interface GuidelineRepository extends JpaRepository<Guideline, String> {
+public interface GuidelineRepository extends JpaRepository<Guideline, Long> {
 }

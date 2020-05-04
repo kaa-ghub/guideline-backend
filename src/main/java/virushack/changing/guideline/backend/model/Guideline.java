@@ -15,13 +15,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-
-/**
- * Node
- * <p>
- * 
- * 
- */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "name",
@@ -33,7 +26,8 @@ import javax.persistence.*;
 public class Guideline {
     @Id
     @JsonIgnore
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @JsonProperty("name")
     private String name;
