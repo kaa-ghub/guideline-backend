@@ -2,20 +2,21 @@ package virushack.changing.guideline.backend.dto;
 
 import lombok.Data;
 import virushack.changing.guideline.backend.model.Gender;
-import virushack.changing.guideline.backend.model.MalaiseKind;
-import virushack.changing.guideline.backend.model.PainValue;
+import virushack.changing.guideline.backend.model.MalaiseType;
+import virushack.changing.guideline.backend.model.Value;
 
-import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 public class ConsultationRequestDto {
     private String id;
 
-    private Gender gender;
+    private Gender sex;
     private String age;
-    private MalaiseKind kind;
-    private PainValue painValue;
+    private List<MalaiseType> malaiseType;
+    private String painLevel;
     private String painDuration;
-    private BigDecimal pressure;
+    private Value currentPressure;
+    private List<String> additionalDiseases;
     private String attendant;
 }

@@ -1,6 +1,6 @@
 package virushack.changing.guideline.backend.model;
 
-public enum PainValue {
+public enum Value {
     LOW,
     MEDIUM,
     HIGH

@@ -3,6 +3,7 @@ package virushack.changing.guideline.backend.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import virushack.changing.guideline.backend.model.Doctor;
 import virushack.changing.guideline.backend.model.Guideline;
 
 import java.util.List;
@@ -15,6 +16,6 @@ public class ConsultationResponseDto {
     private String label;
     private String description;
     private List<String> symptoms;
-    private List<String> doctor;
+    private List<Doctor> doctor;
     private Guideline guideline;
 }

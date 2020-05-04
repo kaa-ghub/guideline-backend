@@ -12,9 +12,9 @@ public class Malaise {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Enumerated(EnumType.STRING)
-    private MalaiseKind kind;
+    private MalaiseType kind;
     @Enumerated(EnumType.STRING)
-    private PainValue painValue;
+    private Value value;
     private String painDuration;
     private BigDecimal pressure;
     private String attendant;

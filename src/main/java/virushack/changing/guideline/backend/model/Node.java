@@ -2,10 +2,11 @@
 package virushack.changing.guideline.backend.model;
 
 import com.fasterxml.jackson.annotation.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.swing.text.Position;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +17,8 @@ import java.util.Map;
 })
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Node {
 
     @Id
@@ -28,7 +31,8 @@ public class Node {
     private NodeData nodeData;
 
     @JsonProperty("position")
-    private String position;
+    @Embedded
+    private Position position;
 
     @JsonIgnore
     @ElementCollection
