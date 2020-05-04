@@ -10,7 +10,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RecommendationResponseDto {
+public class ConsultationResponseDto {
     private String id;
-    private List<Guideline> guideline;
+    private String label;
+    private String description;
+    private List<String> symptoms;
+    private List<String> doctor;
+    private Guideline guideline;
 }

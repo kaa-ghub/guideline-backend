@@ -8,7 +8,7 @@ import virushack.changing.guideline.backend.model.PainValue;
 import java.math.BigDecimal;
 
 @Data
-public class RecommendationRequestDto {
+public class ConsultationRequestDto {
     private String id;
 
     private Gender gender;
