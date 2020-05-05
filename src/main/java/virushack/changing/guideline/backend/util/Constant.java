@@ -4,5 +4,5 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class Constant {
-    public Long DEFAULT_DOCTOR;
+    public Long DEFAULT_DOCTOR = 1L;
 }
