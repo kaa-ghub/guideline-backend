@@ -1,0 +1,453 @@
+databaseChangeLog:
+- changeSet:
+    id: 1588652748078-1
+    author: kaa (generated)
+    changes:
+    - createSequence:
+        sequenceName: HIBERNATE_SEQUENCE
+        startValue: 1000
+- changeSet:
+    id: 1588652748078-2
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: NODE_DATA_ID
+            type: VARCHAR(255)
+        - column:
+            name: VALUE
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: NAME
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: NODE_ID
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: GUIDELINE
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: EDGE_DATA_ID
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: EDGE_ID
+            type: VARCHAR(255)
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-3
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_7
+            name: ID
+            type: BIGINT
+        - column:
+            name: NAME
+            type: VARCHAR(255)
+        tableName: DOCTOR
+- changeSet:
+    id: 1588652748078-4
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_2
+            name: EDGE_ID
+            type: VARCHAR(255)
+        - column:
+            name: EDGE_DATA_ID
+            type: VARCHAR(255)
+        - column:
+            name: GUIDELINE_ID
+            type: BIGINT
+        tableName: EDGE
+- changeSet:
+    id: 1588652748078-5
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_B5
+            name: EDGE_DATA_ID
+            type: VARCHAR(255)
+        - column:
+            name: SOURCE
+            type: VARCHAR(255)
+        - column:
+            name: TARGET
+            type: VARCHAR(255)
+        tableName: EDGE_DATA
+- changeSet:
+    id: 1588652748078-6
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_2A
+            name: ID
+            type: BIGINT
+        - column:
+            name: NAME
+            type: VARCHAR(255)
+        tableName: GUIDELINE
+- changeSet:
+    id: 1588652748078-7
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_5
+            name: ID
+            type: BIGINT
+        - column:
+            name: ATTENDANT
+            type: VARCHAR(255)
+        - column:
+            name: KIND
+            type: VARCHAR(255)
+        - column:
+            name: PAIN_DURATION
+            type: VARCHAR(255)
+        - column:
+            name: PRESSURE
+            type: DECIMAL(19, 2)
+        - column:
+            name: VALUE
+            type: VARCHAR(255)
+        tableName: MALAISE
+- changeSet:
+    id: 1588652748078-8
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_24
+            name: NODE_ID
+            type: VARCHAR(255)
+        - column:
+            name: X
+            type: DECIMAL(19, 2)
+        - column:
+            name: Y
+            type: DECIMAL(19, 2)
+        - column:
+            name: GUIDELINE_ID
+            type: BIGINT
+        - column:
+            name: NODE_DATA_ID
+            type: VARCHAR(255)
+        tableName: NODE
+- changeSet:
+    id: 1588652748078-9
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_C
+            name: NODE_DATA_ID
+            type: VARCHAR(255)
+        - column:
+            name: LABEL
+            type: VARCHAR(255)
+        tableName: NODE_DATA
+- changeSet:
+    id: 1588652748078-10
+    author: kaa (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CONSTRAINT_8
+            name: ID
+            type: BIGINT
+        - column:
+            name: BIRTH_DATE
+            type: date
+        - column:
+            name: FIRST_NAME
+            type: VARCHAR(255)
+        - column:
+            name: GENDER
+            type: VARCHAR(255)
+        - column:
+            name: LAST_NAME
+            type: VARCHAR(255)
+        - column:
+            name: MIDDLE_NAME
+            type: VARCHAR(255)
+        tableName: PERSON
+- changeSet:
+    id: 1588652748078-11
+    author: kaa (generated)
+    changes:
+    - addPrimaryKey:
+        columnNames: EDGE_ID, NAME
+        constraintName: CONSTRAINT_B
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-12
+    author: kaa (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: EDGE_DATA_ID
+        constraintName: UK_FCENRUUKRGWQI6LV65XLYBR0M
+        tableName: EDGE
+- changeSet:
+    id: 1588652748078-13
+    author: kaa (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: NODE_DATA_ID
+        constraintName: UK_M2D5NXGTDIOYRD2MICQGLFN3W
+        tableName: NODE
+- changeSet:
+    id: 1588652748078-14
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: GUIDELINE_ID
+        indexName: FK7F1XCMV7615JU9JTX8G1IPYTP_INDEX_2
+        tableName: EDGE
+- changeSet:
+    id: 1588652748078-15
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: EDGE_DATA_ID
+        indexName: FKGE1NXU56DEEBTU8MJ1R4MVBCS_INDEX_B
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-16
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: NODE_ID
+        indexName: FKK4YN76CP9EBFDHWCJQB94WWPC_INDEX_B
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-17
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: GUIDELINE_ID
+        indexName: FKL6KAJCKIOA9UNSQOIQPM3WC7L_INDEX_2
+        tableName: NODE
+- changeSet:
+    id: 1588652748078-18
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: GUIDELINE
+        indexName: FKLYJUTYVS4OFTJ1RGEJOOF440B_INDEX_B
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-19
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: EDGE_ID
+        indexName: FKMEIGJIQN8MAGD4JPKSXYWODBX_INDEX_B
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-20
+    author: kaa (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: NODE_DATA_ID
+        indexName: FKP2L7BG982L3J3HCW00ML95J4H_INDEX_B
+        tableName: ADDITIONAL_PROPERTIES
+- changeSet:
+    id: 1588652748078-21
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: NODE_DATA_ID
+        baseTableName: NODE
+        constraintName: FK3KG6LT8SDJ2LOF379K2C8SHNO
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: EDGE_DATA_ID
+        referencedTableName: EDGE_DATA
+        validate: true
+- changeSet:
+    id: 1588652748078-22
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: GUIDELINE_ID
+        baseTableName: EDGE
+        constraintName: FK7F1XCMV7615JU9JTX8G1IPYTP
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: GUIDELINE
+        validate: true
+- changeSet:
+    id: 1588652748078-23
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: EDGE_DATA_ID
+        baseTableName: ADDITIONAL_PROPERTIES
+        constraintName: FKGE1NXU56DEEBTU8MJ1R4MVBCS
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: EDGE_DATA_ID
+        referencedTableName: EDGE_DATA
+        validate: true
+- changeSet:
+    id: 1588652748078-24
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: NODE_ID
+        baseTableName: ADDITIONAL_PROPERTIES
+        constraintName: FKK4YN76CP9EBFDHWCJQB94WWPC
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: NODE_ID
+        referencedTableName: NODE
+        validate: true
+- changeSet:
+    id: 1588652748078-25
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: GUIDELINE_ID
+        baseTableName: NODE
+        constraintName: FKL6KAJCKIOA9UNSQOIQPM3WC7L
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: GUIDELINE
+        validate: true
+- changeSet:
+    id: 1588652748078-26
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: GUIDELINE
+        baseTableName: ADDITIONAL_PROPERTIES
+        constraintName: FKLYJUTYVS4OFTJ1RGEJOOF440B
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: ID
+        referencedTableName: GUIDELINE
+        validate: true
+- changeSet:
+    id: 1588652748078-27
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: EDGE_ID
+        baseTableName: ADDITIONAL_PROPERTIES
+        constraintName: FKMEIGJIQN8MAGD4JPKSXYWODBX
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: EDGE_ID
+        referencedTableName: EDGE
+        validate: true
+- changeSet:
+    id: 1588652748078-28
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: NODE_DATA_ID
+        baseTableName: ADDITIONAL_PROPERTIES
+        constraintName: FKP2L7BG982L3J3HCW00ML95J4H
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: NODE_DATA_ID
+        referencedTableName: NODE_DATA
+        validate: true
+- changeSet:
+    id: 1588652748078-29
+    author: kaa (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: EDGE_DATA_ID
+        baseTableName: EDGE
+        constraintName: FKQK61CYBGH8S5YN6X1MM8GHMKC
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: EDGE_DATA_ID
+        referencedTableName: EDGE_DATA
+        validate: true
+

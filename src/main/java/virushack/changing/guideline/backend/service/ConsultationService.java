@@ -2,6 +2,7 @@ package virushack.changing.guideline.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import virushack.changing.guideline.backend.dao.DoctorRepository;
 import virushack.changing.guideline.backend.dto.ConsultationRequestDto;
 import virushack.changing.guideline.backend.dto.ConsultationResponseDto;
 import virushack.changing.guideline.backend.model.*;
@@ -10,9 +11,12 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
+import static virushack.changing.guideline.backend.util.Constant.*;
+
 @Service
 @RequiredArgsConstructor
 public class ConsultationService {
+    private final DoctorRepository doctorRepository;
 
     public ConsultationResponseDto getConsultation(ConsultationRequestDto request) {
         NodeData nodeData = new NodeData("355752b6-c5a7-4e5c-9f62-e8a9cc59fa20", "Головные боли", null);
@@ -53,7 +57,7 @@ public class ConsultationService {
                                 "Асимметрии в улыбке и движениях нет",
                                 "Мысли спутаны, но речь разборчива",
                                 "Симптомы достигают пика в течении 10-15 минут и после этого промежутка все симптомы сходят на нет"),
-                        List.of(new Doctor(1L, "невролог")),
+                        List.of(doctorRepository.findById(DEFAULT_DOCTOR).orElseThrow(() -> new RuntimeException("Доктор не найден"))),
                         guideline);
 
         return response;

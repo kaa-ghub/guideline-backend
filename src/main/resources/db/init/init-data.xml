@@ -6,7 +6,7 @@
 
     <changeSet author="kaa" id="init_person-data" runOnChange="false" failOnError="false">
         <loadUpdateData encoding="UTF-8"
-                        file="init/person.csv"
+                        file="db/init/person.csv"
                         primaryKey="id"
                         separator=";"
                         tableName="person">
@@ -16,6 +16,17 @@
             <column name="last_name" type="STRING"/>
             <column name="birth_date" type="STRING"/>
             <column name="gender" type="STRING"/>
+        </loadUpdateData>
+    </changeSet>
+
+    <changeSet author="kaa" id="init-doctor-data" runOnChange="false" failOnError="false">
+        <loadUpdateData encoding="UTF-8"
+                        file="db/init/doctor.csv"
+                        primaryKey="id"
+                        separator=";"
+                        tableName="doctor">
+            <column name="id" type="NUMERIC"/>
+            <column name="name" type="STRING"/>
         </loadUpdateData>
     </changeSet>
 </databaseChangeLog>
